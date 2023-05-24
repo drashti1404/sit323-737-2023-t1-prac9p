@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clouddeploy
+  labels:
+    app: clouddeploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: clouddeploy
+  template:
+    metadata:
+      labels:
+        app: clouddeploy
+    spec:
+      containers:
+      - name: clouddeploy
+        image: drashtishah04/cloudimage
